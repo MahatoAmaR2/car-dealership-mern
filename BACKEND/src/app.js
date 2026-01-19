@@ -16,9 +16,10 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-
 import userRouter from "./routes/auth.routes.js";
+import carRouter from "./routes/car.routes.js";
 
 app.use("/api/auth", userRouter);
+app.use("/api/cars", carRouter);
 
 export { app };
