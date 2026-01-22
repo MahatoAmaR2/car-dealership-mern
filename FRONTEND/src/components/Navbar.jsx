@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-2">
         <div className="flex h-18 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -24,7 +24,7 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center min-[835px]:gap-6 gap-4 min-[835px]:text-base text-sm">
             <NavLink
-              to="/"
+              to="/cars"
               className="text-gray-700 hover:text-red-600 font-medium"
             >
               Car Listings

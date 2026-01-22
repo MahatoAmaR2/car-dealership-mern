@@ -10,7 +10,7 @@ const SearchBar = ({ className= " " }) => {
       <input
         type="text"
         placeholder="Search cars..."
-        className={`ml-3 pl-10 pr-4 py-2 rounded-2xl border-none outline-none shadow-md h-12 ${className}`}
+        className={`ml-3 pl-10 pr-4 py-2 rounded-xl border-none outline-none shadow-md h-12 ${className}`}
       />
     </>
   );
