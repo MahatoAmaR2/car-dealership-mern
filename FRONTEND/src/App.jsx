@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import CarListings from "./pages/CarListings";
-import CarDetails from "./pages/CarDetails"
+import CarDetails from "./pages/CarDetails";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<CarListings />} />
         <Route path="/cars/:id" element={<CarDetails />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

@@ -12,14 +12,14 @@ export default function Navbar() {
         <div className="flex h-18 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <span className="min-[835px]:text-3xl text-2xl" >🚗</span>
+            <span className="min-[835px]:text-3xl text-2xl">🚗</span>
             <h1 className="min-[835px]:text-2xl text-xl font-bold text-gray-900">
               Auto<span className="text-red-600">Hub</span>
             </h1>
           </div>
           {/* Search */}
           <div className="relative hidden md:block">
-            <SearchBar className="min-[835px]:w-90 w-56"/>
+            <SearchBar className="min-[835px]:w-90 w-56" />
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center min-[835px]:gap-6 gap-4 min-[835px]:text-base text-sm">
@@ -29,18 +29,26 @@ export default function Navbar() {
             >
               Car Listings
             </NavLink>
-            <NavLink
-              to="/about"
-              className="text-gray-700 hover:text-red-600 font-medium"
-            >
-              About Us
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className="text-gray-700 hover:text-red-600 font-medium"
+            <div
+              onClick={() =>
+                document
+                  .getElementById("contact-us")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="text-gray-700 hover:text-red-600 font-medium cursor-pointer"
             >
               Contact Us
-            </NavLink>
+            </div>
+            <div
+              onClick={() =>
+                document
+                  .getElementById("about-us")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="text-gray-700 hover:text-red-600 font-medium cursor-pointer"
+            >
+              About Us
+            </div>
             <Link
               to=""
               className="px-5 py-2 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition cursor-pointer"
@@ -81,7 +89,7 @@ export default function Navbar() {
             >
               Contact Us
             </NavLink>
-           
+
             <Link className="w-full py-2 rounded-full bg-red-600 text-white font-semibold text-center cursor-pointer hover:bg-red-700">
               Login
             </Link>

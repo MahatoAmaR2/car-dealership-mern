@@ -1,5 +1,7 @@
 import HeroSection from "../components/home/HeroSection.jsx";
 import CarListings from "../pages/CarListings.jsx";
+import About from "./About.jsx";
+import Contact from "./Contact.jsx";
 
 export default function Home() {
   return (
@@ -12,6 +14,12 @@ export default function Home() {
           </p>
         </div>
         <CarListings limit={6}/>
+      </div>
+      <div id="contact-us">
+        <Contact/>
+      </div>
+       <div id="about-us">
+        <About/>
       </div>
     </>
   );
