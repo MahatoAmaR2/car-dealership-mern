@@ -5,9 +5,27 @@ export const carsData = [
     model: "M4",
     year: 2023,
     price: 8500000,
-    mileage: 9, // km/l
-    image:
+    mileage: 9,
+    images: [
       "https://images.unsplash.com/photo-1619767886558-efdc259cde1a",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+    ],
+    specs: {
+      engine: "3.0L Twin-Turbo",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      power: "503 HP",
+    },
+    features: [
+      "Leather Seats",
+      "Sunroof",
+      "Digital Dashboard",
+      "ABS & Airbags",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
   },
   {
     id: 2,
@@ -15,9 +33,27 @@ export const carsData = [
     model: "R8",
     year: 2022,
     price: 23000000,
-    mileage: 8, 
-    image:
+    mileage: 8,
+    images: [
       "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9",
+      "https://images.pexels.com/photos/10566898/pexels-photo-10566898.jpeg",
+    ],
+    specs: {
+      engine: "5.2L V10",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      power: "562 HP",
+    },
+    features: [
+      "Quattro AWD",
+      "Virtual Cockpit",
+      "Sports Exhaust",
+      "Carbon Fiber Interior",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
   },
   {
     id: 3,
@@ -25,9 +61,28 @@ export const carsData = [
     model: "GLE",
     year: 2024,
     price: 9200000,
-    mileage: 11, 
-    image:
-      "https://images.unsplash.com/photo-1577615792595-d38014354328",
+    mileage: 11,
+    images: [
+      "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/GLE/11332/1763535294500/front-left-side-47.jpg?tr=w-664",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d",
+    ],
+    specs: {
+      engine: "2.0L Turbo",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      power: "255 HP",
+    },
+    features: [
+      "Panoramic Sunroof",
+      "MBUX System",
+      "Adaptive Cruise Control",
+      "360° Camera",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
   },
   {
     id: 4,
@@ -35,9 +90,28 @@ export const carsData = [
     model: "Fortuner",
     year: 2023,
     price: 4800000,
-    mileage: 14, 
-    image:
+    mileage: 14,
+    images: [
       "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
+      "https://images.unsplash.com/photo-1590362891991-f776e747a588",
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Fortuner/10904/1755075007369/front-view-118.jpg",
+    ],
+    specs: {
+      engine: "2.8L Diesel",
+      transmission: "Automatic",
+      fuel: "Diesel",
+      power: "201 HP",
+    },
+    features: [
+      "4x4 Drive",
+      "Hill Assist",
+      "Touchscreen Infotainment",
+      "7 Airbags",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
   },
   {
     id: 5,
@@ -46,8 +120,27 @@ export const carsData = [
     year: 2022,
     price: 1500000,
     mileage: 18,
-    image:
+    images: [
       "https://images.unsplash.com/photo-1609521263047-f8f205293f24",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
+      "https://cdn-s3.autocarindia.com/Honda/City/_AAB1664.JPG?w=728&q=75",
+    ],
+    specs: {
+      engine: "1.5L i-VTEC",
+      transmission: "Manual",
+      fuel: "Petrol",
+      power: "121 HP",
+    },
+    features: [
+      "LED Headlamps",
+      "Touchscreen Display",
+      "Rear Camera",
+      "Cruise Control",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
   },
   {
     id: 6,
@@ -55,8 +148,138 @@ export const carsData = [
     model: "Creta",
     year: 2024,
     price: 1900000,
-    mileage: 17, // km/l
-    image:
-      "https://images.unsplash.com/photo-1748214547184-d994bfe53322",
+    mileage: 17,
+    images: [
+      "https://imgd.aeplcdn.com/664x374/n/cw/ec/168697/creta-n-line-exterior-right-front-three-quarter-26.png?isig=0&q=80",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d",
+    ],
+    specs: {
+      engine: "1.5L Turbo",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      power: "160 HP",
+    },
+    features: [
+      "Panoramic Sunroof",
+      "Digital Cluster",
+      "ADAS",
+      "Ventilated Seats",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
+  },
+  {
+    id: 7,
+    make: "Kia",
+    model: "Seltos",
+    year: 2023,
+    price: 1800000,
+    mileage: 16,
+    images: [
+      "https://images.unsplash.com/photo-1590362891991-f776e747a588",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d",
+      "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9",
+    ],
+    specs: {
+      engine: "1.4L Turbo",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      power: "138 HP",
+    },
+    features: [
+      "Heads-Up Display",
+      "Bose Sound System",
+      "Wireless Charging",
+      "Ventilated Seats",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
+  },
+  {
+    id: 8,
+    make: "Tata",
+    model: "Harrier",
+    year: 2024,
+    price: 2500000,
+    mileage: 15,
+    images: [
+      "https://imgd.aeplcdn.com/664x374/n/cw/ec/139139/harrier-exterior-right-front-three-quarter-7.png?isig=0&q=80",
+      "https://images.unsplash.com/photo-1590362891991-f776e747a588",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
+    ],
+    specs: {
+      engine: "2.0L Diesel",
+      transmission: "Manual",
+      fuel: "Diesel",
+      power: "170 HP",
+    },
+    features: ["Panoramic Sunroof", "ADAS", "Terrain Response", "6 Airbags"],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
+  },
+  {
+    id: 9,
+    make: "Mahindra",
+    model: "XUV700",
+    year: 2023,
+    price: 2700000,
+    mileage: 16,
+    images: [
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
+      "https://images.unsplash.com/photo-1590362891991-f776e747a588",
+    ],
+    specs: {
+      engine: "2.0L Turbo",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      power: "200 HP",
+    },
+    features: [
+      "Dual Screen Display",
+      "ADAS",
+      "360° Camera",
+      "Alexa Integration",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
+  },
+  {
+    id: 10,
+    make: "Skoda",
+    model: "Slavia",
+    year: 2022,
+    price: 1600000,
+    mileage: 19,
+    images: [
+      "https://imgd.aeplcdn.com/664x374/n/cw/ec/175951/slavia-exterior-right-front-three-quarter-10.png?isig=0&q=80",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24",
+      "https://imgd.aeplcdn.com/664x374/n/cw/ec/175951/slavia-exterior-right-front-three-quarter-8.jpeg?isig=0&q=80",
+    ],
+    specs: {
+      engine: "1.5L TSI",
+      transmission: "Manual",
+      fuel: "Petrol",
+      power: "148 HP",
+    },
+    features: [
+      "Ventilated Seats",
+      "Digital Cockpit",
+      "Wireless Android Auto",
+      "Cruise Control",
+    ],
+    contact: {
+      phone: "+91 98765 43210",
+      email: "sales@autohub.com",
+    },
   },
 ];

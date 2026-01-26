@@ -11,7 +11,7 @@ export default function Home() {
             Available <span className="text-red-600 ">Cars</span>
           </p>
         </div>
-        <CarListings />
+        <CarListings limit={6}/>
       </div>
     </>
   );

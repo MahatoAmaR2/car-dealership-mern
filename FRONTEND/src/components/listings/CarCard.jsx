@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 export default function CarCard({ car }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+    <div
+      onClick={() => navigate(`/cars/${car.id}`)}
+      className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+    >
       <img
-        src={car.image}
+        src={car.images[1]}
         alt={car.model}
         className="h-52 w-full object-cover"
       />
@@ -14,7 +21,7 @@ export default function CarCard({ car }) {
 
         <p className="text-black/90">{car.year}</p>
 
-        <p className="text-black/90 font-medium text-lg " >
+        <p className="text-black/90 font-medium text-lg ">
           ₹{car.price.toLocaleString()}
         </p>
 

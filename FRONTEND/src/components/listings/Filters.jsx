@@ -54,7 +54,6 @@ export default function FilterSidebar({ filters, setFilters, onClose }) {
         ))}
       </div>
 
-      {/* YEAR */}
       <div className="mb-6">
         <p className="font-semibold mb-2">Year</p>
         <select
@@ -65,14 +64,14 @@ export default function FilterSidebar({ filters, setFilters, onClose }) {
           className="w-full border rounded px-3 py-2"
         >
           <option value="">All Years</option>
-          <option value="2025">2024</option>
+          <option value="2025">2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
-          <option value="2021">2022</option>
-          <option value="2020">2022</option>
-          <option value="2019">2022</option>
-          <option value="2018">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
         </select>
       </div>
 
@@ -109,7 +108,7 @@ export default function FilterSidebar({ filters, setFilters, onClose }) {
             makes: [],
           })
         }
-        className="w-full bg-gray-100 py-2 rounded hover:bg-gray-200"
+        className="w-full bg-gray-100 py-2 rounded hover:bg-gray-200 cursor-pointer"
       >
         Clear Filters
       </button>

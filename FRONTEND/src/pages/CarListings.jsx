@@ -3,7 +3,7 @@ import FilterSidebar from "../components/listings/Filters.jsx";
 import CarGrid from "../components/listings/CarGrid";
 import { carsData } from "../data.js"
 
-export default function CarListings() {
+export default function CarListings({limit}) {
   const [showFilters, setShowFilters] = useState(false);
 
   const [filters, setFilters] = useState({
@@ -33,6 +33,11 @@ export default function CarListings() {
     return matchesSearch && matchesYear && matchesBrand && matchesPrice;
   });
 
+    const carsToShow = limit
+    ? filteredCars.slice(0, limit)
+    : filteredCars;
+
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       
@@ -55,7 +60,7 @@ export default function CarListings() {
 
         
         <div className="flex-1">
-          <CarGrid cars={filteredCars} />
+          <CarGrid cars={carsToShow} />
         </div>
       </div>
 
