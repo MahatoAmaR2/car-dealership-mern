@@ -50,7 +50,7 @@ export default function Navbar() {
               About Us
             </div>
             <Link
-              to=""
+              to="/login"
               className="px-5 py-2 rounded-full bg-red-600 text-white font-medium hover:bg-red-700 transition cursor-pointer"
             >
               Login
@@ -90,7 +90,7 @@ export default function Navbar() {
               Contact Us
             </NavLink>
 
-            <Link className="w-full py-2 rounded-full bg-red-600 text-white font-semibold text-center cursor-pointer hover:bg-red-700">
+            <Link to="/login" className="w-full py-2 rounded-full bg-red-600 text-white font-semibold text-center cursor-pointer hover:bg-red-700">
               Login
             </Link>
           </div>
