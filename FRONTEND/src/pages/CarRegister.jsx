@@ -1,6 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../api/axios";
+import Toast from "../components/Toast";
 
 export default function CarRegister() {
+  const navigate = useNavigate();
+
+  const [toast, setToast] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     make: "",
     model: "",
@@ -25,111 +33,129 @@ export default function CarRegister() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    const data = new FormData();
-    data.append("make", formData.make);
-    data.append("model", formData.model);
-    data.append("year", formData.year);
-    data.append("vin", formData.vin);
-    data.append("mileage", formData.mileage);
-    data.append("price", formData.price);
+    try {
+      const data = new FormData();
+      data.append("make", formData.make);
+      data.append("model", formData.model);
+      data.append("year", formData.year);
+      data.append("vin", formData.vin);
+      data.append("mileage", formData.mileage);
+      data.append("price", formData.price);
 
-    formData.images.forEach((img) => {
-      data.append("images", img);
-    });
+      formData.images.forEach((img) => {
+        data.append("images", img);
+      });
 
-    console.log("Car Register Data:", formData);
+      // ✅ backend call
+      await api.post("/cars/car_register", data);
+
+      setToast({
+        message: "Car registered successfully!",
+        type: "success",
+      });
+
+      setTimeout(() => navigate("/cars"), 1500);
+    } catch (error) {
+      setToast({
+        message:
+          error.response?.data?.message || "Car registration failed",
+        type: "error",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-black text-white py-16 px-4">
-      <div className="max-w-3xl mx-auto bg-neutral-900 p-8 rounded-xl border border-neutral-800">
-        <h1 className="text-2xl font-bold text-center mb-8">
-          Register <span className="text-red-600">Car</span>
-        </h1>
+    <>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
 
-        <form onSubmit={handleSubmit} className="grid gap-5">
-          <input
-            type="text"
-            name="make"
-            placeholder="Car Make (e.g. BMW)"
-            value={formData.make}
-            onChange={handleChange}
-            required
-            className="input-dark"
-          />
+      <div className="min-h-screen bg-black text-white py-16 px-4">
+        <div className="max-w-3xl mx-auto bg-neutral-900 p-8 rounded-xl border border-neutral-800">
+          <h1 className="text-2xl font-bold text-center mb-8">
+            Register <span className="text-red-600">Car</span>
+          </h1>
 
-          <input
-            type="text"
-            name="model"
-            placeholder="Car Model (e.g. M4)"
-            value={formData.model}
-            onChange={handleChange}
-            required
-            className="input-dark"
-          />
+          <form onSubmit={handleSubmit} className="grid gap-5">
+            <input
+              name="make"
+              placeholder="Car Make"
+              onChange={handleChange}
+              required
+              className="input-dark"
+            />
 
-          <input
-            type="number"
-            name="year"
-            placeholder="Manufacturing Year"
-            value={formData.year}
-            onChange={handleChange}
-            required
-            className="input-dark"
-          />
+            <input
+              name="model"
+              placeholder="Car Model"
+              onChange={handleChange}
+              required
+              className="input-dark"
+            />
 
-          <input
-            type="text"
-            name="vin"
-            placeholder="VIN Number"
-            value={formData.vin}
-            onChange={handleChange}
-            required
-            className="input-dark"
-          />
+            <input
+              type="number"
+              name="year"
+              placeholder="Year"
+              onChange={handleChange}
+              required
+              className="input-dark"
+            />
 
-          <input
-            type="number"
-            name="mileage"
-            placeholder="Mileage (km/l)"
-            value={formData.mileage}
-            onChange={handleChange}
-            required
-            className="input-dark"
-          />
+            <input
+              name="vin"
+              placeholder="VIN Number"
+              onChange={handleChange}
+              required
+              className="input-dark"
+            />
 
-          <input
-            type="number"
-            name="price"
-            placeholder="Price (₹)"
-            value={formData.price}
-            onChange={handleChange}
-            required
-            className="input-dark"
-          />
+            <input
+              type="number"
+              name="mileage"
+              placeholder="Mileage (km/l)"
+              onChange={handleChange}
+              required
+              className="input-dark"
+            />
 
-          <div>
-            <label className="block mb-2 text-sm">Upload Car Images</label>
+            <input
+              type="number"
+              name="price"
+              placeholder="Price (₹)"
+              onChange={handleChange}
+              required
+              className="input-dark"
+            />
+
             <input
               type="file"
               multiple
               accept="image/*"
               onChange={handleImageChange}
-              className="w-full text-sm"
+              className="text-sm"
             />
-          </div>
 
-          <button
-            type="submit"
-            className="mt-4 bg-red-600 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
-          >
-            Register Car
-          </button>
-        </form>
+            <button
+              type="submit"
+              disabled={loading}
+              className="mt-4 bg-red-600 py-3 rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50"
+            >
+              {loading ? "Registering..." : "Register Car"}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
